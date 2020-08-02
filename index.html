@@ -1,108 +1,149 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>David Chu's China Bistro</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
-  </head>
-<body>
-  <header>
-    <nav id="header-nav" class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="index.html" class="pull-left visible-md visible-lg">
-            <div id="logo-img" alt="Logo image"></div>
-          </a>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mod2_Soln</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  * {
+	box-sizing: border-box;
+}
+body {
+	font-family: monospace;
+}
+h1 {
+	color: black; 
+	text-align: center;
+}
+.container {
+	border: none;    
+	margin-left: auto;    
+    margin-right: auto;   
+    margin-top: 15px;    
+	margin-bottom: 15px;    
+    padding: 15px;
+} 
 
-          <div class="navbar-brand">
-            <a href="index.html"><h1>David Chu's China Bistro</h1></a>
-            <p>
-              <img src="images/star-k-logo.png" alt="Kosher certification">
-              <span>Kosher Certified</span>
-            </p>
-          </div>
+section {
+	border: 1px solid black; 
+	background-color: gray; 
+	border-radius: 0.5rem;    
+	width: 100%;    
+	height: 200px;   
+	color: black;    
+	position: relative; 
+	overflow: auto;
+}
 
-          <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        
-        <div id="collapsable-nav" class="collapse navbar-collapse">
-           <ul id="nav-list" class="nav navbar-nav navbar-right">
-            <li id="navHomeButton" class="visible-xs active">
-              <a href="index.html">
-                <span class="glyphicon glyphicon-home"></span> Home</a>
-            </li>
-            <li id="navMenuButton">
-              <a href="#" onclick="$dc.loadMenuCategories();">
-                <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> About</a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Awards</a>
-            </li>
-            <li id="phone" class="hidden-xs">
-              <a href="tel:410-602-5008">
-                <span>410-602-5008</span></a><div>* We Deliver</div>
-            </li>
-          </ul><!-- #nav-list -->
-        </div><!-- .collapse .navbar-collapse -->
-      </div><!-- .container -->
-    </nav><!-- #header-nav -->
-  </header>
+#chicken, #beef, #sushi {
+	border: 1px solid black; 
+	border-radius: 0.5rem;    
+	text-align: center; 
+	width: 30%;    
+	margin-left: 70%;    
+	font-weight: bold;    
+	font-size: 125%;    
+    margin-bottom: 0;   
+	margin-top: 0;    
+	padding: 5px;    
+	background-color: pink;
+}
+#beef {
+	background-color: red;
+}
+#sushi {
+   background-color: yellow;
+}
 
-  <div id="call-btn" class="visible-xs">
-    <a class="btn" href="tel:410-602-5008">
-    <span class="glyphicon glyphicon-earphone"></span>
-    410-602-5008
-    </a>
-  </div>
-  <div id="xs-deliver" class="text-center visible-xs">* We Deliver</div>
+p { 
+	padding: 15px; 
+	margin: 0;
+} 
+                                                           /* FOR DESKTOP DECIVES ONLY */
 
-  <div id="main-content" class="container"></div>
+@media(min-width: 992px) {
+	.box {
+		display: grid; 
+	    grid-template-columns: repeat(3, 1fr); 
+	    grid-template-rows: 1fr; 
+	    grid-auto-flow: row; 
+	}
 
-  <footer class="panel-footer">
-    <div class="container">
-      <div class="row">
-        <section id="hours" class="col-sm-4">
-          <span>Hours:</span><br>
-          Sun-Thurs: 11:15am - 10:00pm<br>
-          Fri: 11:15am - 2:30pm<br>
-          Saturday Closed
-          <hr class="visible-xs">
-        </section>
-        <section id="address" class="col-sm-4">
-          <span>Address:</span><br>
-          7105 Reisterstown Road<br>
-          Baltimore, MD 21215
-          <p>* Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge for all deliveries.</p>
-          <hr class="visible-xs">
-        </section>
-        <section id="testimonials" class="col-sm-4">
-          <p>"The best Chinese restaurant I've been to! And that's saying a lot, since I've been to many!"</p>
-          <p>"Amazing food! Great service! Couldn't ask for more! I'll be back again and again!"</p>
-        </section>
-      </div>
-      <div class="text-center">&copy; Copyright David Chu's China Bistro 2016</div>
-    </div>
-  </footer>
+	.menu1 {
+		grid-column: 1; grid-row: 1;
+	}
 
-  <!-- jQuery (Bootstrap JS plugins depend on it) -->
-  <script src="js/jquery-2.1.4.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/ajax-utils.js"></script>
-  <script src="js/script.js"></script>
-</body>
+	.menu3 {
+		grid-column: 3; grid-row: 1;
+	}
+}
+
+	                                                      /* FOR TABLET DEVICES ONLY */
+
+@media(min-width: 768px) and (max-width: 991px) {
+	.box {
+		display: grid; 
+	    grid-template-columns: repeat(2, 1fr);
+	    grid-template-rows: repeat(2, 1fr); 
+	    grid-auto-flow: row;
+	}
+
+	.menu1 {
+	    grid-column: 1 / 2; grid-row: 1 / 2;
+	     } 
+	.menu2 {
+		grid-column: 2 / 3; grid-row: 1 / 2;
+	}
+	.menu3 {
+		grid-column: 1 / 3; grid-row: 2 / 3;
+	}
+}
+	     
+
+	                                                       /* FOR MOBILE DEVICES ONLY */
+
+@media (max-width: 768px) {
+	.box {
+		display: grid; 
+	    grid-template-columns: 1fr; 
+	    grid-template-rows: repeat(3, 1fr); 
+	    grid-auto-flow: column;
+	}
+
+	     .menu1 {
+	     	grid-column: 1; grid-row: 1 / 2;
+	     }
+	     .menu2 {
+	     	grid-column: 1; grid-row: 2 / 3;
+	     }
+	     .menu3 {
+	     	grid-column: 1; grid-row: 3 / 4;
+	     }
+}
+  </style>
+     
+</head>
+<body> 
+	<h1>Our Menu</h1> 
+	<div class="box"> 
+		<div class="container menu1"> 
+			<section> 
+				<div id="chicken"> <p>Chicken</p> </div> 
+				<p> Welcome to Chicken Salad Chick, where we offer delicious, scratch-made, Southern-style, craveable favorites served from the heart. We don’t believe in strangers, just friends we haven’t met yet—so come in and enjoy! You’ll find fresh, healthy fare and gracious hospitality at our chicken salad restaurant.</p> 
+			</section> 
+		</div> 
+		<div class="container menu2"> 
+			<section> 
+				<div id="beef"> <p>Beef</p> </div> 
+				<p> “The Ericsson meat suppliers: a strong network of specialised experts who know their customers, and who guarantee a tailor-made service.”.</p> 
+			</section> 
+		</div> 
+		<div class="container menu3"> 
+			<section> 
+				<div id="sushi"> <p>Sushi</p> </div> 
+				<p> Sushi is a Japanese dish of prepared vinegared rice, usually with some sugar and salt, accompanying a variety of ingredients, such as seafood, often raw, vegetables, and occasionally tropical fruits.</p> 
+			</section> 
+		</div> 
+		</div>
+</body> 
 </html>
